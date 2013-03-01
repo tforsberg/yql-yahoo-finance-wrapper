@@ -1,0 +1,423 @@
+﻿<RESSOURCES>
+  
+  <INJECTION>
+    <RENDERS>
+      <RENDER id="XML">ESGI.Yahoo.Finance.Render.RenderXML,ESGI.Yahoo.Finance</RENDER>
+      <RENDER id="JSON">ESGI.Yahoo.Finance.Render.RenderJSON,ESGI.Yahoo.Finance</RENDER>
+    </RENDERS>
+    <OPERATIONS>
+      <OPERATION id="STOCK">ESGI.Yahoo.Finance.StockInfo,ESGI.Yahoo.Finance</OPERATION>
+      <OPERATION id="HISTORY">ESGI.Yahoo.Finance.StockHistoryInfo,ESGI.Yahoo.Finance</OPERATION>
+      <OPERATION id="NEWS">ESGI.Yahoo.Finance.NewsInfo,ESGI.Yahoo.Finance</OPERATION>
+      <OPERATION id="OPTION">ESGI.Yahoo.Finance.OptionsInfo,ESGI.Yahoo.Finance</OPERATION>
+    </OPERATIONS>
+  </INJECTION>
+  
+  <TABLES>
+      <TABLE id="QUOTES">yahoo.finance.quotes</TABLE>
+      <TABLE id="OPTIONS">yahoo.finance.options</TABLE>
+      <TABLE id="QUOTELIST">yahoo.finance.quoteslist</TABLE>
+      <TABLE id="SECTORS">yahoo.finance.sectors</TABLE>
+      <TABLE id="INDUSTRY">yahoo.finance.industry</TABLE>
+  </TABLES>
+  <URLS>
+    <URL id="PUBLIC_API">http://query.yahooapis.com/v1/public/yql</URL>
+    <URL id="TABLES">store://datatables.org/alltableswithkeys</URL>
+    <URL id="HISTORIC_API">http://ichart.finance.yahoo.com/table.csv?s=</URL>
+    <URL id="RSS_API">http://finance.yahoo.com/rss/headline?s=</URL>
+  </URLS>
+  <CRITERIAS>
+    <STOCK>
+    <CRITERIA id="Ask" name="Ask">Ask</CRITERIA>
+    <CRITERIA id="AverageDailyVolume" name="Average Daily Volume">AverageDailyVolume</CRITERIA>
+    <CRITERIA id="Bid" name="Bid">Bid</CRITERIA>
+    <CRITERIA id="AskRealtime" name="Ask Real Time">AskRealtime</CRITERIA>
+    <CRITERIA id="BidRealtime" name="Bid Real Time">BidRealtime</CRITERIA>
+    <CRITERIA id="BookValue" name="Book Value">BookValue</CRITERIA>
+    <CRITERIA id="Change_PercentChange" name="Change (%)">Change_PercentChange</CRITERIA>
+    <CRITERIA id="Change" name="Change">Change</CRITERIA>
+    <CRITERIA id="Commission" name="Commission">Commission</CRITERIA>
+    <CRITERIA id="ChangeRealtime" name="Change RealTime">ChangeRealtime</CRITERIA>
+    <CRITERIA id="AfterHoursChangeRealtime" name="Afterhours Change Realtime">AfterHoursChangeRealtime</CRITERIA>
+    <CRITERIA id="DividendShare" name="Dividend Share">DividendShare</CRITERIA>
+    <CRITERIA id="LastTradeDate" name="Last Trade Date">LastTradeDate</CRITERIA>
+    <CRITERIA id="TradeDate" name="Trade Date">TradeDate</CRITERIA>
+    <CRITERIA id="EarningsShare" name="Earning Share">EarningsShare</CRITERIA>
+    <CRITERIA id="ErrorIndicationreturnedforsymbolchangedinvalid" name="Error">ErrorIndicationreturnedforsymbolchangedinvalid</CRITERIA>
+    <CRITERIA id="EPSEstimateCurrentYear" name="EPS Estimate Current Year">EPSEstimateCurrentYear</CRITERIA>
+    <CRITERIA id="EPSEstimateNextYear" name="EPS Estimate Next Year">EPSEstimateNextYear</CRITERIA>
+    <CRITERIA id="EPSEstimateNextQuarter" name="EPS Estimate Next Quarter">EPSEstimateNextQuarter</CRITERIA>
+    <CRITERIA id="DaysLow" name="Days Low">DaysLow</CRITERIA>
+    <CRITERIA id="DaysHigh" name="Days High">DaysHigh</CRITERIA>
+    <CRITERIA id="YearLow" name="Years Low">YearLow</CRITERIA>
+    <CRITERIA id="YearHigh" name="Years High">YearHigh</CRITERIA>
+    <CRITERIA id="HoldingsGainPercent" name="Holdings Gain (%)">HoldingsGainPercent</CRITERIA>
+    <CRITERIA id="AnnualizedGain" name="Annualized Gain">AnnualizedGain</CRITERIA>
+    <CRITERIA id="HoldingsGain" name="Holdings Gain">HoldingsGain</CRITERIA>
+    <CRITERIA id="HoldingsGainPercentRealtime" name="Holding Gain Percent Realtime">HoldingsGainPercentRealtime</CRITERIA>
+    <CRITERIA id="HoldingsGainRealtime" name="Holdings Gain Real Time">HoldingsGainRealtime</CRITERIA>
+    <CRITERIA id="MoreInfo" name="More Info">MoreInfo</CRITERIA>
+    <CRITERIA id="OrderBookRealtime" name="Order Book Real Time">OrderBookRealtime</CRITERIA>
+    <CRITERIA id="MarketCapitalization" name="Market Capitalization">MarketCapitalization</CRITERIA>
+    <CRITERIA id="MarketCapRealtime" name="Market Capitalization Real Time">MarketCapRealtime</CRITERIA>
+    <CRITERIA id="EBITDA" name="EBITDA">EBITDA</CRITERIA>
+    <CRITERIA id="ChangeFromYearLow" name="Change From Year Low">ChangeFromYearLow</CRITERIA>
+    <CRITERIA id="PercentChangeFromYearLow" name="Change From Year Low (%)">PercentChangeFromYearLow</CRITERIA>
+    <CRITERIA id="LastTradeRealtimeWithTime" name="Last Trade Realtime With Time">LastTradeRealtimeWithTime</CRITERIA>
+    <CRITERIA id="ChangePercentRealtime" name="Change Real Time (%)">ChangePercentRealtime</CRITERIA>
+    <CRITERIA id="ChangeFromYearHigh" name="Change From Year High">ChangeFromYearHigh</CRITERIA>
+    <CRITERIA id="PercebtChangeFromYearHigh" name="Change From Year High (%)">PercebtChangeFromYearHigh</CRITERIA>
+    <CRITERIA id="LastTradeWithTime" name="Last Trade With Time">LastTradeWithTime</CRITERIA>
+    <CRITERIA id="LastTradePriceOnly" name="Last Trade Price Only">LastTradePriceOnly</CRITERIA>
+    <CRITERIA id="HighLimit" name="High Limit">HighLimit</CRITERIA>
+    <CRITERIA id="LowLimit" name="Low Limit">LowLimit</CRITERIA>
+    <CRITERIA id="DaysRange" name="Days Range">DaysRange</CRITERIA>
+    <CRITERIA id="DaysRangeRealtime" name="Days Range Real Time">DaysRangeRealtime</CRITERIA>
+    <CRITERIA id="FiftydayMovingAverage" name="Fifty Day Moving Average">FiftydayMovingAverage</CRITERIA>
+    <CRITERIA id="TwoHundreddayMovingAverage" name="Two Hundred Day Moving Average">TwoHundreddayMovingAverage</CRITERIA>
+    <CRITERIA id="ChangeFromTwoHundreddayMovingAverage" name="Change from Two Hundred Day Moving Average">ChangeFromTwoHundreddayMovingAverage</CRITERIA>
+    <CRITERIA id="PercentChangeFromTwoHundreddayMovingAverage" name="Two Hundred Day Moving Average (%)">PercentChangeFromTwoHundreddayMovingAverage</CRITERIA>
+    <CRITERIA id="ChangeFromFiftydayMovingAverage" name="Change From Fifty Day Moving Average">ChangeFromFiftydayMovingAverage</CRITERIA>
+    <CRITERIA id="PercentChangeFromFiftydayMovingAverage" name="Change From Fifty Day Moving Average (%)">PercentChangeFromFiftydayMovingAverage</CRITERIA>
+    <CRITERIA id="Name" name="Name">Name</CRITERIA>
+    <CRITERIA id="Notes" name="Notes">Notes</CRITERIA>
+    <CRITERIA id="Open" name="Open">Open</CRITERIA>
+    <CRITERIA id="PreviousClose" name="Previous Close">PreviousClose</CRITERIA>
+    <CRITERIA id="PricePaid" name="Price Paid">PricePaid</CRITERIA>
+    <CRITERIA id="ChangeinPercent" name="Change (%)">ChangeinPercent</CRITERIA>
+    <CRITERIA id="PriceSales" name="Price Sales">PriceSales</CRITERIA>
+    <CRITERIA id="PriceBook" name="Price Book">PriceBook</CRITERIA>
+    <CRITERIA id="ExDividendDate" name="Ex Dividend Date">ExDividendDate</CRITERIA>
+    <CRITERIA id="PERatio" name="PE Ratio">PERatio</CRITERIA>
+    <CRITERIA id="DividendPayDate" name="Dividend Pay Date">DividendPayDate</CRITERIA>
+    <CRITERIA id="PERatioRealtime" name="PE Ratio RealTime">PERatioRealtime</CRITERIA>
+    <CRITERIA id="PEGRatio" name="PEG Ratio">PEGRatio</CRITERIA>
+    <CRITERIA id="PriceEPSEstimateCurrentYear" name="Price EPS Estimate Current Year">PriceEPSEstimateCurrentYear</CRITERIA>
+    <CRITERIA id="PriceEPSEstimateNextYear" name="Price EPS Estimate Next Year">PriceEPSEstimateNextYear</CRITERIA>
+    <CRITERIA id="Symbol" name="Symbol">Symbol</CRITERIA>
+    <CRITERIA id="SharesOwned" name="Shares Owned">SharesOwned</CRITERIA>
+    <CRITERIA id="ShortRatio" name="Short Ratio">ShortRatio</CRITERIA>
+    <CRITERIA id="LastTradeTime" name="Last Trade Time">LastTradeTime</CRITERIA>
+    <CRITERIA id="TickerTrend" name="Ticker Trend">TickerTrend</CRITERIA>
+    <CRITERIA id="OneyrTargetPrice" name="One Year Target Price">OneyrTargetPrice</CRITERIA>
+    <CRITERIA id="Volume" name="Volume">Volume</CRITERIA>
+    <CRITERIA id="HoldingsValue" name="Holdings Value">HoldingsValue</CRITERIA>
+    <CRITERIA id="HoldingsValueRealtime" name="Holdings Value Real Time">HoldingsValueRealtime</CRITERIA>
+    <CRITERIA id="YearRange" name="Year Range">YearRange</CRITERIA>
+    <CRITERIA id="DaysValueChange" name="Days Value Change">DaysValueChange</CRITERIA>
+    <CRITERIA id="DaysValueChangeRealtime" name="Days Value Change Realtime">DaysValueChangeRealtime</CRITERIA>
+    <CRITERIA id="StockExchange" name="Stock Exchange">StockExchange</CRITERIA>
+    <CRITERIA id="DividendYield" name="Dividend Yield">DividendYield</CRITERIA>
+    <CRITERIA id="PercentChange" name="Percent Change">PercentChange</CRITERIA>
+    </STOCK>
+    <OPTIONS>
+    <CRITERIA id="strikePrice" name="Strike" Price="">strikePrice</CRITERIA>
+    <CRITERIA id="lastPrice" name="Last" price="">lastPrice</CRITERIA>
+    <CRITERIA id="change" name="Change">change</CRITERIA>
+    <CRITERIA id="changeDir" name="Change" Direction="">changeDir</CRITERIA>
+    <CRITERIA id="bid" name="Bid">bid</CRITERIA>
+    <CRITERIA id="ask" name="Ask">ask</CRITERIA>
+    <CRITERIA id="vol" name="Volume">vol</CRITERIA>
+    <CRITERIA id="openInt" name="Open">openInt</CRITERIA>
+    </OPTIONS>
+  </CRITERIAS>
+  <SECTORS>
+    <SECTOR id="Accident_And_Health_Insurance" code="431"/>
+    <SECTOR id="Advertising_Agencies" code="720"/>
+    <SECTOR id="Aerospace_Defense_Major_Diversified" code="610"/>
+    <SECTOR id="Aerospace_Defense_Products_And_Services" code="611"/>
+    <SECTOR id="Agricultural_Chemicals" code="112"/>
+    <SECTOR id="Air_Delivery_And_Freight_Services" code="773"/>
+    <SECTOR id="Air_Services_Other" code="772"/>
+    <SECTOR id="Aluminum" code="132"/>
+    <SECTOR id="Apparel_Stores" code="730"/>
+    <SECTOR id="Appliances" code="310"/>
+    <SECTOR id="Application_Software" code="821"/>
+    <SECTOR id="Asset_Management" code="422"/>
+    <SECTOR id="Auto_Dealerships" code="744"/>
+    <SECTOR id="Auto_Manufacturers_Major" code="330"/>
+    <SECTOR id="Auto_Parts" code="333"/>
+    <SECTOR id="Auto_Parts_Stores" code="738"/>
+    <SECTOR id="Auto_Parts_Wholesale" code="750"/>
+    <SECTOR id="Basic_Materials_Wholesale" code="758"/>
+    <SECTOR id="Beverages_Brewers" code="346"/>
+    <SECTOR id="Beverages_Soft_Drinks" code="348"/>
+    <SECTOR id="Beverages_Wineries_And_Distillers" code="347"/>
+    <SECTOR id="Biotechnology" code="515"/>
+    <SECTOR id="Broadcasting_Radio" code="724"/>
+    <SECTOR id="Broadcasting_TV" code="723"/>
+    <SECTOR id="Building_Materials_Wholesale" code="751"/>
+    <SECTOR id="Business_Equipment" code="313"/>
+    <SECTOR id="Business_Services" code="760"/>
+    <SECTOR id="Business_Software_And_Services" code="826"/>
+    <SECTOR id="Catalog_And_Mail_Order_Houses" code="739"/>
+    <SECTOR id="CATV_Systems" code="725"/>
+    <SECTOR id="Cement" code="633"/>
+    <SECTOR id="Chemicals_Major_Diversified" code="110"/>
+    <SECTOR id="Cigarettes" code="350"/>
+    <SECTOR id="Cleaning_Products" code="326"/>
+    <SECTOR id="Closed_End_Fund_Debt" code="425"/>
+    <SECTOR id="Closed_End_Fund_Equity" code="426"/>
+    <SECTOR id="Closed_End_Fund_Foreign" code="427"/>
+    <SECTOR id="Communication_Equipment" code="841"/>
+    <SECTOR id="Computer_Based_Systems" code="812"/>
+    <SECTOR id="Computer_Peripherals" code="815"/>
+    <SECTOR id="Computers_Wholesale" code="755"/>
+    <SECTOR id="Confectioners" code="345"/>
+    <SECTOR id="Conglomerates" code="210"/>
+    <SECTOR id="Consumer_Services" code="763"/>
+    <SECTOR id="Copper" code="131"/>
+    <SECTOR id="Credit_Services" code="424"/>
+    <SECTOR id="Dairy_Products" code="344"/>
+    <SECTOR id="Data_Storage_Devices" code="813"/>
+    <SECTOR id="Department_Stores" code="731"/>
+    <SECTOR id="Diagnostic_Substances" code="516"/>
+    <SECTOR id="Discount_Variety_Stores" code="732"/>
+    <SECTOR id="Diversified_Communication_Services" code="846"/>
+    <SECTOR id="Diversified_Computer_Systems" code="810"/>
+    <SECTOR id="Diversified_Electronics" code="836"/>
+    <SECTOR id="Diversified_Investments" code="423"/>
+    <SECTOR id="Diversified_Machinery" code="622"/>
+    <SECTOR id="Diversified_Utilities" code="913"/>
+    <SECTOR id="Drug_Delivery" code="513"/>
+    <SECTOR id="Drug_Manufacturers_Major" code="510"/>
+    <SECTOR id="Drug_Manufacturers_Other" code="511"/>
+    <SECTOR id="Drug_Related_Products" code="514"/>
+    <SECTOR id="Drug_Stores" code="733"/>
+    <SECTOR id="Drugs_Generic" code="512"/>
+    <SECTOR id="Drugs_Wholesale" code="756"/>
+    <SECTOR id="Education_And_Training_Services" code="766"/>
+    <SECTOR id="Electric_Utilities" code="911"/>
+    <SECTOR id="Electronic_Equipment" code="314"/>
+    <SECTOR id="Electronics_Stores" code="735"/>
+    <SECTOR id="Electronics_Wholesale" code="753"/>
+    <SECTOR id="Entertainment_Diversified" code="722"/>
+    <SECTOR id="Farm_And_Construction_Machinery" code="620"/>
+    <SECTOR id="Farm_Products" code="341"/>
+    <SECTOR id="Food_Major_Diversified" code="340"/>
+    <SECTOR id="Food_Wholesale" code="757"/>
+    <SECTOR id="Foreign_Money_Center_Banks" code="417"/>
+    <SECTOR id="Foreign_Regional_Banks" code="418"/>
+    <SECTOR id="Foreign_Utilities" code="910"/>
+    <SECTOR id="Gaming_Activities" code="714"/>
+    <SECTOR id="Gas_Utilities" code="912"/>
+    <SECTOR id="General_Building_Materials" code="634"/>
+    <SECTOR id="General_Contractors" code="636"/>
+    <SECTOR id="General_Entertainment" code="716"/>
+    <SECTOR id="Gold" code="134"/>
+    <SECTOR id="Grocery_Stores" code="734"/>
+    <SECTOR id="Health_Care_Plans" code="522"/>
+    <SECTOR id="Healthcare_Information_Services" code="825"/>
+    <SECTOR id="Heavy_Construction" code="635"/>
+    <SECTOR id="Home_Furnishing_Stores" code="737"/>
+    <SECTOR id="Home_Furnishings_And_Fixtures" code="311"/>
+    <SECTOR id="Home_Health_Care" code="526"/>
+    <SECTOR id="Home_Improvement_Stores" code="736"/>
+    <SECTOR id="Hospitals" code="524"/>
+    <SECTOR id="Housewares_And_Accessories" code="312"/>
+    <SECTOR id="Independent_Oil_And_Gas" code="121"/>
+    <SECTOR id="Industrial_Electrical_Equipment" code="627"/>
+    <SECTOR id="Industrial_Equipment_And_Components" code="621"/>
+    <SECTOR id="Industrial_Equipment_Wholesale" code="752"/>
+    <SECTOR id="Industrial_Metals_And_Minerals" code="133"/>
+    <SECTOR id="Information_And_Delivery_Services" code="827"/>
+    <SECTOR id="Information_Technology_Services" code="824"/>
+    <SECTOR id="Insurance_Brokers" code="434"/>
+    <SECTOR id="Internet_Information_Providers" code="851"/>
+    <SECTOR id="Internet_Service_Providers" code="850"/>
+    <SECTOR id="Internet_Software_And_Services" code="852"/>
+    <SECTOR id="Investment_Brokerage_National" code="420"/>
+    <SECTOR id="Investment_Brokerage_Regional" code="421"/>
+    <SECTOR id="Jewelry_Stores" code="742"/>
+    <SECTOR id="Life_Insurance" code="430"/>
+    <SECTOR id="Lodging" code="710"/>
+    <SECTOR id="Long_Distance_Carriers" code="843"/>
+    <SECTOR id="Long_Term_Care_Facilities" code="523"/>
+    <SECTOR id="Lumber_Wood_Production" code="632"/>
+    <SECTOR id="Machine_Tools_And_Accessories" code="624"/>
+    <SECTOR id="Major_Airlines" code="770"/>
+    <SECTOR id="Major_Integrated_Oil_And_Gas" code="120"/>
+    <SECTOR id="Management_Services" code="769"/>
+    <SECTOR id="Manufactured_Housing" code="631"/>
+    <SECTOR id="Marketing_Services" code="721"/>
+    <SECTOR id="Meat_Products" code="343"/>
+    <SECTOR id="Medical_Appliances_And_Equipment" code="521"/>
+    <SECTOR id="Medical_Equipment_Wholesale" code="754"/>
+    <SECTOR id="Medical_Instruments_And_Supplies" code="520"/>
+    <SECTOR id="Medical_Laboratories_And_Research" code="525"/>
+    <SECTOR id="Medical_Practitioners" code="527"/>
+    <SECTOR id="Metal_Fabrication" code="626"/>
+    <SECTOR id="Money_Center_Banks" code="410"/>
+    <SECTOR id="Mortgage_Investment" code="447"/>
+    <SECTOR id="Movie_Production_Theaters" code="726"/>
+    <SECTOR id="Multimedia_And_Graphics_Software" code="820"/>
+    <SECTOR id="Music_And_Video_Stores" code="743"/>
+    <SECTOR id="Networking_And_Communication_Devices" code="814"/>
+    <SECTOR id="Nonmetallic_Mineral_Mining" code="136"/>
+    <SECTOR id="Office_Supplies" code="327"/>
+    <SECTOR id="Oil_And_Gas_Drilling_And_Exploration" code="123"/>
+    <SECTOR id="Oil_And_Gas_Equipment_And_Services" code="124"/>
+    <SECTOR id="Oil_And_Gas_Pipelines" code="125"/>
+    <SECTOR id="Oil_And_Gas_Refining_And_Marketing" code="122"/>
+    <SECTOR id="Packaging_And_Containers" code="325"/>
+    <SECTOR id="Paper_And_Paper_Products" code="324"/>
+    <SECTOR id="Personal_Computers" code="811"/>
+    <SECTOR id="Personal_Products" code="323"/>
+    <SECTOR id="Personal_Services" code="762"/>
+    <SECTOR id="Photographic_Equipment_And_Supplies" code="318"/>
+    <SECTOR id="Pollution_And_Treatment_Controls" code="623"/>
+    <SECTOR id="Printed_Circuit_Boards" code="835"/>
+    <SECTOR id="Processed_And_Packaged_Goods" code="342"/>
+    <SECTOR id="Processing_Systems_And_Products" code="842"/>
+    <SECTOR id="Property_And_Casualty_Insurance" code="432"/>
+    <SECTOR id="Property_Management" code="448"/>
+    <SECTOR id="Publishing_Books" code="729"/>
+    <SECTOR id="Publishing_Newspapers" code="727"/>
+    <SECTOR id="Publishing_Periodicals" code="728"/>
+    <SECTOR id="Railroads" code="776"/>
+    <SECTOR id="Real_Estate_Development" code="449"/>
+    <SECTOR id="Recreational_Goods_Other" code="317"/>
+    <SECTOR id="Recreational_Vehicles" code="332"/>
+    <SECTOR id="Regional_Airlines" code="771"/>
+    <SECTOR id="Regional_Mid_Atlantic_Banks" code="412"/>
+    <SECTOR id="Regional_Midwest_Banks" code="414"/>
+    <SECTOR id="Regional_Northeast_Banks" code="411"/>
+    <SECTOR id="Regional_Pacific_Banks" code="416"/>
+    <SECTOR id="Regional_Southeast_Banks" code="413"/>
+    <SECTOR id="Regional_Southwest_Banks" code="415"/>
+    <SECTOR id="REIT_Diversified" code="440"/>
+    <SECTOR id="REIT_Healthcare_Facilities" code="442"/>
+    <SECTOR id="REIT_Hotel_Motel" code="443"/>
+    <SECTOR id="REIT_Industrial" code="444"/>
+    <SECTOR id="REIT_Office" code="441"/>
+    <SECTOR id="REIT_Residential" code="445"/>
+    <SECTOR id="REIT_Retail" code="446"/>
+    <SECTOR id="Rental_And_Leasing_Services" code="761"/>
+    <SECTOR id="Research_Services" code="768"/>
+    <SECTOR id="Residential_Construction" code="630"/>
+    <SECTOR id="Resorts_And_Casinos" code="711"/>
+    <SECTOR id="Restaurants" code="712"/>
+    <SECTOR id="Rubber_And_Plastics" code="322"/>
+    <SECTOR id="Savings_And_Loans" code="419"/>
+    <SECTOR id="Scientific_And_Technical_Instruments" code="837"/>
+    <SECTOR id="Security_And_Protection_Services" code="765"/>
+    <SECTOR id="Security_Software_And_Services" code="823"/>
+    <SECTOR id="Semiconductor_Broad_Line" code="830"/>
+    <SECTOR id="Semiconductor_Equipment_And_Materials" code="834"/>
+    <SECTOR id="Semiconductor_Integrated_Circuits" code="833"/>
+    <SECTOR id="Semiconductor_Memory_Chips" code="831"/>
+    <SECTOR id="Semiconductor_Specialized" code="832"/>
+    <SECTOR id="Shipping" code="775"/>
+    <SECTOR id="Silver" code="135"/>
+    <SECTOR id="Small_Tools_And_Accessories" code="625"/>
+    <SECTOR id="Specialized_Health_Services" code="528"/>
+    <SECTOR id="Specialty_Chemicals" code="113"/>
+    <SECTOR id="Specialty_Eateries" code="713"/>
+    <SECTOR id="Specialty_Retail_Other" code="745"/>
+    <SECTOR id="Sporting_Activities" code="715"/>
+    <SECTOR id="Sporting_Goods" code="316"/>
+    <SECTOR id="Sporting_Goods_Stores" code="740"/>
+    <SECTOR id="Staffing_And_Outsourcing_Services" code="764"/>
+    <SECTOR id="Steel_And_Iron" code="130"/>
+    <SECTOR id="Surety_And_Title_Insurance" code="433"/>
+    <SECTOR id="Synthetics" code="111"/>
+    <SECTOR id="Technical_And_System_Software" code="822"/>
+    <SECTOR id="Technical_Services" code="767"/>
+    <SECTOR id="Telecom_Services_Domestic" code="844"/>
+    <SECTOR id="Telecom_Services_Foreign" code="845"/>
+    <SECTOR id="Textile_Apparel_Clothing" code="320"/>
+    <SECTOR id="Textile_Apparel_Footwear_And_Accessories" code="321"/>
+    <SECTOR id="Textile_Industrial" code="628"/>
+    <SECTOR id="Tobacco_Products_Other" code="351"/>
+    <SECTOR id="Toy_And_Hobby_Stores" code="741"/>
+    <SECTOR id="Toys_And_Games" code="315"/>
+    <SECTOR id="Trucking" code="774"/>
+    <SECTOR id="Trucks_And_Other_Vehicles" code="331"/>
+    <SECTOR id="Waste_Management" code="637"/>
+    <SECTOR id="Water_Utilities" code="914"/>
+    <SECTOR id="Wholesale_Other" code="759"/>
+    <SECTOR id="Wireless_Communications" code="840"/>
+  </SECTORS>
+  <EXCHANGES>
+    <EXCHANGE id="AMS">AMS</EXCHANGE>
+    <EXCHANGE id="ASE">ASE</EXCHANGE>
+    <EXCHANGE id="ASX">ASX</EXCHANGE>
+    <EXCHANGE id="BAR">BAR</EXCHANGE>
+    <EXCHANGE id="BER">BER</EXCHANGE>
+    <EXCHANGE id="BIL">BIL</EXCHANGE>
+    <EXCHANGE id="BRE">BRE</EXCHANGE>
+    <EXCHANGE id="BSE">BSE</EXCHANGE>
+    <EXCHANGE id="BTX">BTX</EXCHANGE>
+    <EXCHANGE id="BUE">BUE</EXCHANGE>
+    <EXCHANGE id="CAL">CAL</EXCHANGE>
+    <EXCHANGE id="CBO">CBO</EXCHANGE>
+    <EXCHANGE id="CBT">CBT</EXCHANGE>
+    <EXCHANGE id="CCS">CCS</EXCHANGE>
+    <EXCHANGE id="VAN">VAN</EXCHANGE>
+    <EXCHANGE id="CME">CME</EXCHANGE>
+    <EXCHANGE id="CMX">CMX</EXCHANGE>
+    <EXCHANGE id="CPH">CPH</EXCHANGE>
+    <EXCHANGE id="DJI">DJI</EXCHANGE>
+    <EXCHANGE id="DUS">DUS</EXCHANGE>
+    <EXCHANGE id="EBS">EBS</EXCHANGE>
+    <EXCHANGE id="ENX">ENX</EXCHANGE>
+    <EXCHANGE id="EUX">EUX</EXCHANGE>
+    <EXCHANGE id="EWX">EWX</EXCHANGE>
+    <EXCHANGE id="FGI">FGI</EXCHANGE>
+    <EXCHANGE id="FRA">FRA</EXCHANGE>
+    <EXCHANGE id="FTI">FTI</EXCHANGE>
+    <EXCHANGE id="GER">GER</EXCHANGE>
+    <EXCHANGE id="HAM">HAM</EXCHANGE>
+    <EXCHANGE id="HAN">HAN</EXCHANGE>
+    <EXCHANGE id="HKG">HKG</EXCHANGE>
+    <EXCHANGE id="IOB">IOB</EXCHANGE>
+    <EXCHANGE id="ISE">ISE</EXCHANGE>
+    <EXCHANGE id="JKT">JKT</EXCHANGE>
+    <EXCHANGE id="KLS">KLS</EXCHANGE>
+    <EXCHANGE id="KSC">KSC</EXCHANGE>
+    <EXCHANGE id="KSQ">KSQ</EXCHANGE>
+    <EXCHANGE id="LMA">LMA</EXCHANGE>
+    <EXCHANGE id="LSB">LSB</EXCHANGE>
+    <EXCHANGE id="LSE">LSE</EXCHANGE>
+    <EXCHANGE id="MAD">MAD</EXCHANGE>
+    <EXCHANGE id="MCE">MCE</EXCHANGE>
+    <EXCHANGE id="MEX">MEX</EXCHANGE>
+    <EXCHANGE id="MFI">MFI</EXCHANGE>
+    <EXCHANGE id="MIL">MIL</EXCHANGE>
+    <EXCHANGE id="MUN">MUN</EXCHANGE>
+    <EXCHANGE id="NAS">NAS</EXCHANGE>
+    <EXCHANGE id="NGM">NGM</EXCHANGE>
+    <EXCHANGE id="NIK">NIK</EXCHANGE>
+    <EXCHANGE id="NSI">NSI</EXCHANGE>
+    <EXCHANGE id="NYB">NYB</EXCHANGE>
+    <EXCHANGE id="NYM">NYM</EXCHANGE>
+    <EXCHANGE id="NYQ">NYQ</EXCHANGE>
+    <EXCHANGE id="NZX">NZX</EXCHANGE>
+    <EXCHANGE id="OBB">OBB</EXCHANGE>
+    <EXCHANGE id="OSE">OSE</EXCHANGE>
+    <EXCHANGE id="OSL">OSL</EXCHANGE>
+    <EXCHANGE id="PAR">PAR</EXCHANGE>
+    <EXCHANGE id="PCX">PCX</EXCHANGE>
+    <EXCHANGE id="RTS">RTS</EXCHANGE>
+    <EXCHANGE id="PNK">PNK</EXCHANGE>
+    <EXCHANGE id="SAO">SAO</EXCHANGE>
+    <EXCHANGE id="SES">SES</EXCHANGE>
+    <EXCHANGE id="SET">SET</EXCHANGE>
+    <EXCHANGE id="SGO">SGO</EXCHANGE>
+    <EXCHANGE id="SHH">SHH</EXCHANGE>
+    <EXCHANGE id="SHZ">SHZ</EXCHANGE>
+    <EXCHANGE id="SPI">SPI</EXCHANGE>
+    <EXCHANGE id="STO">STO</EXCHANGE>
+    <EXCHANGE id="STU">STU</EXCHANGE>
+    <EXCHANGE id="TAI">TAI</EXCHANGE>
+    <EXCHANGE id="TKD">TKD</EXCHANGE>
+    <EXCHANGE id="TLV">TLV</EXCHANGE>
+    <EXCHANGE id="TLO">TLO</EXCHANGE>
+    <EXCHANGE id="TLX">TLX</EXCHANGE>
+    <EXCHANGE id="TOR">TOR</EXCHANGE>
+    <EXCHANGE id="TWO">TWO</EXCHANGE>
+    <EXCHANGE id="VIE">VIE</EXCHANGE>
+    <EXCHANGE id="VTX">VTX</EXCHANGE>
+    <EXCHANGE id="WCB">WCB</EXCHANGE>
+  </EXCHANGES>>
+</RESSOURCES>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<YAHOO>
+  <YQL>
+    <TABLE name="QUOTES">yahoo.finance.quotes</TABLE>
+    <TABLE name="OPTIONS">yahoo.finance.options</TABLE>
+    <TABLE name="QUOTELIST">yahoo.finance.quoteslist</TABLE>
+    <TABLE name="SECTORS">yahoo.finance.sectors</TABLE>
+    <TABLE name="INDUSTRY">yahoo.finance.industry</TABLE>
+  </YQL>
+</YAHOO>
+
+<!--
+PUBLIC_API_URL = 'http://query.yahooapis.com/v1/public/yql'
+DATATABLES_URL = 'store://datatables.org/alltableswithkeys'
+HISTORICAL_URL = 'http://ichart.finance.yahoo.com/table.csv?s='
+RSS_URL = 'http://finance.yahoo.com/rss/headline?s='
+FINANCE_TABLES = {'quotes': 'yahoo.finance.quotes',
+'options': 'yahoo.finance.options',
+'quoteslist': 'yahoo.finance.quoteslist',
+'sectors': 'yahoo.finance.sectors',
+'industry': 'yahoo.finance.industry'}-->
